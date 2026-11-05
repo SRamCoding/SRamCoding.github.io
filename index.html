@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portafolio de Sebastián Ramírez: analista funcional e ingeniero de datos en Chiclayo, Perú.">
+<meta property="og:title" content="Sebastián Ramírez · Portafolio">
+<meta property="og:description" content="Analista funcional e ingeniero de datos. Del proceso al dato.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Sebastián Ramírez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+/* Layout: portada oscura tipo terminal + láminas de plano técnico; riel de hojas a la derecha */
+:root{
+  --paper:#F2F6FA; --grid:#DCE6F0; --grid-strong:#C3D4E6;
+  --ink:#0E2A47; --ink-2:#3A5675; --line:#2F6BA8; --line-soft:#9DBBD9;
+  --card:#FFFFFF; --card-border:#B8CCE0; --stamp:#C4621F;
+  --term-bg:#12151A; --term-bar:#1B2028; --term-fg:#D7DCE3; --term-dim:#6E7887; --term-amber:#F0A35E; --term-cyan:#7FC4D6; --term-white:#F2F4F7;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0C1D30; --grid:#142C46; --grid-strong:#1D3B5C;
+  --ink:#E6EEF7; --ink-2:#A9BED5; --line:#72AAE2; --line-soft:#335B85;
+  --card:#0F253C; --card-border:#2A4A6E; --stamp:#F0A35E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0C1D30; --grid:#142C46; --grid-strong:#1D3B5C;
+  --ink:#E6EEF7; --ink-2:#A9BED5; --line:#72AAE2; --line-soft:#335B85;
+  --card:#0F253C; --card-border:#2A4A6E; --stamp:#F0A35E; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--term-bg)}
+a{color:var(--line)}
+:focus-visible{outline:2px solid var(--stamp);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--f-mono)}
+
+/* ---------- PORTADA ---------- */
+.hero{background:var(--term-bg);color:var(--term-fg);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(127,196,214,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(127,196,214,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:56px 64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--term-dim);margin:0 0 18px}
+.eyebrow b{color:var(--term-amber);font-weight:500}
+.hero h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.6rem,6vw,4.4rem);line-height:.98;letter-spacing:-.02em;color:var(--term-white);margin:0 0 18px;text-wrap:balance}
+.hero h1 span{display:block;color:var(--term-cyan)}
+.hero .role{font-family:var(--f-mono);font-size:14px;color:var(--term-amber);margin:0 0 14px}
+.hero .lead{font-size:17px;color:#B9C2CE;max-width:38ch;margin:0 0 26px}
+.flowline{font-family:var(--f-mono);font-size:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--term-fg)}
+.flowline .node{border:1px solid #3A4452;padding:4px 10px;border-radius:4px;background:#171B21}
+.flowline .track{position:relative;width:48px;height:2px;background:#2C333E}
+.flowline .track::after{content:"";position:absolute;top:-3px;left:0;width:8px;height:8px;border-radius:50%;background:var(--term-amber);animation:packet 1.8s linear infinite}
+.flowline .track:nth-of-type(2)::after{animation-delay:.9s}
+@keyframes packet{from{left:0}to{left:calc(100% - 8px)}}
+
+.term{background:var(--term-bar);border:1px solid #2A313B;border-radius:10px;overflow:hidden;box-shadow:0 24px 60px -24px rgba(0,0,0,.6)}
+.term-top{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid #2A313B}
+.term-top i{width:10px;height:10px;border-radius:50%;background:#3A4452;display:block}
+.term-top span{margin-left:8px;font-family:var(--f-mono);font-size:12px;color:var(--term-dim)}
+.term-body{background:var(--term-bg);padding:16px 16px 12px;font-family:var(--f-mono);font-size:13px;line-height:1.7;height:300px;overflow-y:auto;cursor:text}
+.term-body p{margin:0;white-space:pre-wrap;word-break:break-word}
+.t-dim{color:var(--term-dim)} .t-amb{color:var(--term-amber)} .t-cy{color:var(--term-cyan)} .t-wh{color:var(--term-white)}
+.term-body a{color:var(--term-cyan)}
+.prompt{display:flex;gap:8px;align-items:center}
+.prompt label{color:var(--term-amber);white-space:nowrap}
+.prompt input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:var(--term-white);font:inherit;caret-color:var(--term-amber);padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid #2A313B;background:var(--term-bar)}
+.chips button{font-family:var(--f-mono);font-size:12px;background:#232933;color:var(--term-cyan);border:1px solid #2F3743;border-radius:20px;padding:4px 10px;cursor:pointer;transition:background .15s,color .15s}
+.chips button:hover{background:var(--term-cyan);color:var(--term-bg)}
+
+/* ---------- NAVEGACIÓN ---------- */
+.rail{position:fixed;right:max(18px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:6px;font-family:var(--f-mono);font-size:11px}
+.rail a{display:flex;align-items:center;justify-content:flex-end;gap:8px;text-decoration:none;color:var(--ink-2);padding:3px 0}
+.rail a .lab{opacity:0;transform:translateX(6px);transition:.2s;background:var(--card);border:1px solid var(--card-border);padding:2px 8px;border-radius:3px;white-space:nowrap}
+.rail a .num{width:30px;height:24px;display:grid;place-items:center;border:1px solid var(--card-border);background:var(--card);border-radius:3px;transition:.2s}
+.rail a:hover .lab,.rail a.on .lab{opacity:1;transform:none}
+.rail a.on .num{background:var(--line);color:var(--card);border-color:var(--line)}
+.rail.dark a{color:#9AA4B2}
+.rail.dark a .num,.rail.dark a .lab{background:#1B2028;border-color:#333B47;color:#C8D0DA}
+.rail.dark a.on .num{background:var(--term-amber);color:var(--term-bg);border-color:var(--term-amber)}
+.strip{display:none;position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--grid-strong)}
+.strip .in{display:flex;gap:6px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+.strip a{flex:none;font-family:var(--f-mono);font-size:12px;text-decoration:none;color:var(--ink-2);border:1px solid var(--card-border);background:var(--card);padding:4px 10px;border-radius:3px}
+.strip a.on{background:var(--line);color:var(--card);border-color:var(--line)}
+
+/* ---------- LÁMINAS ---------- */
+main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px),linear-gradient(var(--grid-strong) 1px,transparent 1px),linear-gradient(90deg,var(--grid-strong) 1px,transparent 1px);background-size:16px 16px,16px 16px,80px 80px,80px 80px;position:relative}
+.sheet{padding-block:72px 40px;scroll-margin-top:40px}
+.sheet-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:36px;flex-wrap:wrap}
+.sheet-head .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--line);margin:0 0 6px}
+.sheet-head h2{font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,4.5vw,3rem);line-height:1;margin:0;letter-spacing:-.015em}
+.sheet-head .esc{font-family:var(--f-mono);font-size:11px;color:var(--ink-2);text-align:right;line-height:1.5}
+.panel{background:var(--card);border:1px solid var(--card-border);position:relative}
+.panel::before,.panel::after{content:"";position:absolute;width:10px;height:10px;border-color:var(--line);border-style:solid}
+.panel::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.panel::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--line);margin:0 0 8px;text-transform:uppercase}
+.chip{display:inline-block;font-family:var(--f-mono);font-size:12px;border:1px solid var(--card-border);color:var(--ink-2);padding:2px 9px;border-radius:20px;background:var(--paper)}
+.chipset{display:flex;flex-wrap:wrap;gap:6px}
+
+/* Perfil */
+.perfil{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px}
+.perfil .txt{padding:28px}
+.perfil .txt p{margin:0 0 14px;max-width:62ch;color:var(--ink-2)}
+.perfil .txt p:first-of-type{font-size:19px;color:var(--ink);line-height:1.5}
+.side{display:flex;flex-direction:column;gap:20px}
+.side .panel{padding:22px}
+.lang{display:grid;grid-template-columns:72px minmax(0,1fr) 52px;gap:10px;align-items:center;font-size:14px;margin-bottom:10px}
+.lang .bar{height:8px;background:var(--grid);position:relative}
+.lang .bar i{position:absolute;inset:0 auto 0 0;background:var(--line)}
+.lang .v{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);text-align:right}
+.scale{display:grid;grid-template-columns:72px minmax(0,1fr) 52px;gap:10px;font-family:var(--f-mono);font-size:10px;color:var(--ink-2)}
+.scale div{display:flex;justify-content:space-between}
+.facts{display:grid;gap:8px;font-size:14px;margin:0}
+.facts div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--grid-strong);padding-bottom:6px}
+.facts dt{color:var(--ink-2)} .facts dd{margin:0;text-align:right;font-weight:500}
+
+.method{margin-top:28px;padding:26px 24px}
+.method-row{display:grid;grid-template-columns:minmax(0,1fr) 60px minmax(0,1fr) 60px minmax(0,1fr);align-items:center;gap:8px}
+.step{text-align:left}
+.step .n{font-family:var(--f-mono);font-size:11px;color:var(--line)}
+.step h3{font-family:var(--f-display);font-size:22px;margin:2px 0 4px;font-weight:700}
+.step p{margin:0;font-size:14px;color:var(--ink-2)}
+.wire{height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 11px);background-size:22px 2px;animation:wire 1s linear infinite;position:relative}
+.wire::after{content:"";position:absolute;right:-2px;top:-4px;border:5px solid transparent;border-left:7px solid var(--line)}
+@keyframes wire{to{background-position:22px 0}}
+
+/* Habilidades */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.skill{padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .25s}
+.skill:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--line-soft)}
+.skill h3{font-family:var(--f-display);font-size:22px;margin:0;font-weight:700}
+.skill p{margin:0;color:var(--ink-2);font-size:15px}
+.skill .tag{position:absolute;top:14px;right:16px;font-family:var(--f-mono);font-size:11px;color:var(--ink-2)}
+
+/* Proyectos */
+.projects{display:flex;flex-direction:column;gap:40px}
+.proj{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);border:1px solid var(--card-border);background:var(--card);position:relative}
+.proj-head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:22px 26px;border-bottom:1px solid var(--card-border);flex-wrap:wrap}
+.proj-head .code{font-family:var(--f-mono);font-size:12px;color:var(--line);letter-spacing:.06em}
+.proj-head h3{font-family:var(--f-display);font-weight:800;font-size:clamp(1.5rem,3vw,2rem);margin:4px 0 4px;line-height:1.1}
+.proj-head .one{margin:0;color:var(--ink-2);max-width:60ch}
+.stamp{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--stamp);border:2px solid var(--stamp);padding:4px 10px;transform:rotate(-3deg);white-space:nowrap;align-self:center}
+.proj-body{padding:24px 26px;display:flex;flex-direction:column;gap:18px;border-right:1px solid var(--card-border);min-width:0}
+.proj-body p{margin:0;color:var(--ink-2);font-size:15px}
+.proj-body ol{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:8px}
+.proj-body ol li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;font-size:15px;color:var(--ink-2)}
+.proj-body ol li::before{content:counter(s,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--line);padding-top:3px}
+.proj-body ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px;color:var(--ink-2)}
+.proj-body ul li::marker{color:var(--line)}
+.proj-fig{padding:24px 22px;display:flex;flex-direction:column;gap:14px;min-width:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:12px 12px;background-color:var(--card)}
+.proj-fig svg{width:100%;height:auto;display:block}
+.proj-fig .cap{font-family:var(--f-mono);font-size:11px;color:var(--ink-2);margin:0;border-top:1px solid var(--card-border);padding-top:10px}
+.proj-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 26px;border-top:1px solid var(--card-border);flex-wrap:wrap}
+.proj-foot a{font-family:var(--f-mono);font-size:13px;text-decoration:none;border-bottom:1px solid currentColor}
+.analogy{border-left:3px solid var(--stamp);padding:8px 14px;background:var(--paper);font-size:15px;color:var(--ink)}
+
+/* SVG */
+.s-box{fill:var(--card);stroke:var(--line);stroke-width:1.2}
+.s-box2{fill:var(--paper);stroke:var(--line);stroke-width:1.2}
+.s-hl{fill:var(--line)}
+.s-t{fill:var(--ink);font-family:var(--f-mono);font-size:11px}
+.s-tw{fill:var(--card);font-family:var(--f-mono);font-size:11px}
+.s-ts{fill:var(--ink-2);font-family:var(--f-mono);font-size:9.5px}
+.s-ln{fill:none;stroke:var(--line);stroke-width:1.4}
+.s-flow{fill:none;stroke:var(--line);stroke-width:1.6;stroke-dasharray:5 6;animation:dash 1.1s linear infinite}
+.s-amb{fill:var(--stamp)}
+.s-ambln{fill:none;stroke:var(--stamp);stroke-width:1.6;stroke-dasharray:5 6;animation:dash 1.1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.s-pulse{animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.s-bar{fill:var(--line);transform-box:fill-box;transform-origin:left;animation:grow 3s ease-in-out infinite alternate}
+@keyframes grow{from{transform:scaleX(.55)}to{transform:scaleX(1)}}
+
+/* Trayectoria */
+.tl{position:relative;padding-left:38px;display:grid;gap:22px}
+.tl::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--ink)}
+.tl-item{position:relative;padding:20px 22px}
+.tl-item::after{content:"";position:absolute;left:-33px;top:24px;width:14px;height:14px;background:var(--paper);border:2px solid var(--ink);transform:rotate(45deg)}
+.tl-item.now::after{background:var(--stamp);border-color:var(--stamp)}
+.tl-item .when{font-family:var(--f-mono);font-size:12px;color:var(--line);margin:0 0 4px}
+.tl-item h3{font-family:var(--f-display);font-size:20px;margin:0 0 2px;font-weight:700}
+.tl-item .org{margin:0 0 8px;font-weight:500;font-size:15px}
+.tl-item p{margin:0;color:var(--ink-2);font-size:15px;max-width:66ch}
+
+/* Contacto */
+.contact{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start}
+.contact .call{padding:30px}
+.contact .call h3{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.05;margin:0 0 12px;text-wrap:balance}
+.contact .call p{margin:0;color:var(--ink-2);max-width:46ch}
+.clist{display:grid;gap:12px}
+.crow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:14px 18px}
+.crow .lbl{margin:0 0 2px}
+.crow .val{font-family:var(--f-mono);font-size:14px;word-break:break-all;color:var(--ink);user-select:all}
+.crow a.val{text-decoration:none;user-select:auto}
+.crow a.val:hover{color:var(--line)}
+.btn{font-family:var(--f-mono);font-size:12px;background:var(--paper);color:var(--ink);border:1px solid var(--card-border);padding:6px 12px;cursor:pointer;border-radius:3px;white-space:nowrap;text-decoration:none}
+.btn:hover{background:var(--line);color:var(--card);border-color:var(--line)}
+
+/* Cajetín */
+.titleblock{margin-top:56px;margin-bottom:48px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border:2px solid var(--ink);background:var(--card);font-family:var(--f-mono);font-size:11px}
+.titleblock div{padding:10px 12px;border-right:1px solid var(--ink)}
+.titleblock div:last-child{border-right:0}
+.titleblock span{display:block;color:var(--ink-2);font-size:10px;letter-spacing:.06em}
+.titleblock b{font-weight:500;font-size:13px;color:var(--ink)}
+
+/* Retícula del cursor */
+.cross{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:0;transition:opacity .2s}
+.cross .h,.cross .v{position:absolute;background:var(--line);opacity:.35}
+.cross .h{left:0;right:0;height:1px}
+.cross .v{top:0;bottom:0;width:1px}
+.cross .xy{position:absolute;font-family:var(--f-mono);font-size:10px;color:var(--line);background:var(--paper);padding:1px 5px;border:1px solid var(--line-soft)}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--paper);font-family:var(--f-mono);font-size:13px;padding:8px 14px;border-radius:4px;opacity:0;transition:.25s;z-index:40;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:1180px){.rail{display:none}.strip{display:block}}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:40px 44px}
+  .perfil,.contact,.proj{grid-template-columns:minmax(0,1fr)}
+  .proj-body{border-right:0;border-bottom:1px solid var(--card-border)}
+  .skills{grid-template-columns:minmax(0,1fr)}
+  .method-row{grid-template-columns:minmax(0,1fr)}
+  .wire{width:2px;height:34px;margin-left:10px;background:repeating-linear-gradient(180deg,var(--line) 0 6px,transparent 6px 11px);background-size:2px 22px;animation-name:wirev}
+  .wire::after{right:auto;left:-4px;top:auto;bottom:-3px;border:5px solid transparent;border-top:7px solid var(--line)}
+  .titleblock{grid-template-columns:1fr 1fr}
+  .titleblock div:nth-child(2){border-right:0}
+  .titleblock div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+  .term-body{height:260px}
+}
+@keyframes wirev{to{background-position:0 22px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+@media (pointer:coarse){.cross{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ============ PORTADA ============ -->
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow"><b>●</b> CHICLAYO, PERÚ · −5 UTC</p>
+      <h1>Sebastián <span>Ramírez</span></h1>
+      <p class="role"># analista funcional + ingeniero de datos</p>
+      <p class="lead">Entiendo cómo trabaja una empresa, lo dibujo para que todos lo entiendan y lo convierto en sistemas y datos que ayudan a decidir mejor.</p>
+      <div class="flowline" aria-label="Proceso, luego sistema, luego dato">
+        <span class="node">proceso</span><span class="track"></span><span class="node">sistema</span><span class="track"></span><span class="node">dato</span>
+      </div>
+    </div>
+
+    <div class="term" role="region" aria-label="Terminal para navegar el portafolio">
+      <div class="term-top"><i></i><i></i><i></i><span>seb@portafolio: ~</span></div>
+      <div class="term-body" id="term">
+        <div id="out">
+<p class="t-dim">Último acceso: hoy, desde algún lugar del mundo</p>
+<p><span class="t-amb">seb@portafolio:~$</span> <span class="t-wh">whoami</span></p>
+<p>Sebastián Alonso Ramírez Roncal</p>
+<p class="t-dim">Analista funcional · Data engineer · Backend</p>
+<p>&nbsp;</p>
+<p>Esta página se navega escribiendo. Prueba <span class="t-cy">ayuda</span>,</p>
+<p>o toca un comando de abajo si prefieres no escribir.</p>
+<p>&nbsp;</p>
+        </div>
+        <form class="prompt" id="pf" autocomplete="off">
+          <label for="cmd">seb@portafolio:~$</label>
+          <input id="cmd" name="cmd" spellcheck="false" autocapitalize="off" aria-label="Escribe un comando">
+        </form>
+      </div>
+      <div class="chips" aria-label="Comandos rápidos">
+        <button type="button" data-cmd="perfil">perfil</button>
+        <button type="button" data-cmd="habilidades">habilidades</button>
+        <button type="button" data-cmd="proyectos">proyectos</button>
+        <button type="button" data-cmd="trayectoria">trayectoria</button>
+        <button type="button" data-cmd="contacto">contacto</button>
+        <button type="button" data-cmd="github">github</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="strip" aria-label="Hojas">
+  <div class="wrap in">
+    <a href="#perfil" data-s="perfil">01 Perfil</a>
+    <a href="#habilidades" data-s="habilidades">02 Habilidades</a>
+    <a href="#proyectos" data-s="proyectos">03 Proyectos</a>
+    <a href="#trayectoria" data-s="trayectoria">04 Trayectoria</a>
+    <a href="#contacto" data-s="contacto">05 Contacto</a>
+  </div>
+</nav>
+
+<nav class="rail dark" id="rail" aria-label="Índice de hojas">
+  <a href="#inicio" data-s="inicio"><span class="lab">Portada</span><span class="num">00</span></a>
+  <a href="#perfil" data-s="perfil"><span class="lab">Perfil</span><span class="num">01</span></a>
+  <a href="#habilidades" data-s="habilidades"><span class="lab">Habilidades</span><span class="num">02</span></a>
+  <a href="#proyectos" data-s="proyectos"><span class="lab">Proyectos</span><span class="num">03</span></a>
+  <a href="#trayectoria" data-s="trayectoria"><span class="lab">Trayectoria</span><span class="num">04</span></a>
+  <a href="#contacto" data-s="contacto"><span class="lab">Contacto</span><span class="num">05</span></a>
+</nav>
+
+<main id="main">
+<div class="wrap">
+
+<!-- ============ 01 PERFIL ============ -->
+<section class="sheet" id="perfil">
+  <div class="sheet-head">
+    <div><p class="k">HOJA 01 / 05</p><h2>Perfil</h2></div>
+    <div class="esc">VISTA GENERAL<br>ESC. 1:1</div>
+  </div>
+  <div class="perfil">
+    <div class="panel txt">
+      <p>Trabajo justo donde se encuentran el negocio y la tecnología.</p>
+      <p>Primero escucho: cómo se compra un material, cómo se postula a una licitación del Estado, cómo se atiende a un paciente. Después lo dibujo en diagramas sencillos que cualquiera en la empresa puede leer y corregir.</p>
+      <p>Y al final lo construyo: el sistema donde vive esa información y los flujos de datos que la limpian, la ordenan y la convierten en reportes para decidir.</p>
+      <p>Hoy soy analista funcional en TechQuk, una empresa de Chiclayo que lleva tecnología a entidades públicas, y estudio Ingeniería de Sistemas en Saint Leo University.</p>
+    </div>
+    <div class="side">
+      <div class="panel">
+        <p class="lbl">Ficha</p>
+        <dl class="facts">
+          <div><dt>Base</dt><dd>Chiclayo, Perú</dd></div>
+          <div><dt>Rol actual</dt><dd>Analista funcional</dd></div>
+          <div><dt>Enfoque</dt><dd>Datos + sistemas</dd></div>
+          <div><dt>Sectores</dt><dd>Público, salud</dd></div>
+        </dl>
+      </div>
+      <div class="panel">
+        <p class="lbl">Idiomas</p>
+        <div class="lang"><span>Español</span><div class="bar"><i style="width:100%"></i></div><span class="v">Nativo</span></div>
+        <div class="lang"><span>Inglés</span><div class="bar"><i style="width:66.6%"></i></div><span class="v">B2</span></div>
+        <div class="lang"><span>Francés</span><div class="bar"><i style="width:16.6%"></i></div><span class="v">A1</span></div>
+        <div class="scale"><span></span><div><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></div><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel method">
+    <p class="lbl">Cómo trabajo</p>
+    <div class="method-row">
+      <div class="step"><span class="n">PASO 1</span><h3>Proceso</h3><p>Entrevisto a las personas y mapeo cómo trabajan, paso a paso, con diagramas BPMN.</p></div>
+      <div class="wire" aria-hidden="true"></div>
+      <div class="step"><span class="n">PASO 2</span><h3>Sistema</h3><p>Convierto ese mapa en requisitos, pantallas y bases de datos, y ayudo a construirlo.</p></div>
+      <div class="wire" aria-hidden="true"></div>
+      <div class="step"><span class="n">PASO 3</span><h3>Dato</h3><p>Muevo y transformo la información para que se convierta en reportes y decisiones.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 HABILIDADES ============ -->
+<section class="sheet" id="habilidades">
+  <div class="sheet-head">
+    <div><p class="k">HOJA 02 / 05</p><h2>Habilidades</h2></div>
+    <div class="esc">4 PIEZAS<br>ENSAMBLADAS</div>
+  </div>
+  <div class="skills">
+    <article class="panel skill">
+      <span class="tag">PZ-A</span>
+      <p class="lbl">Ingeniería de datos</p>
+      <h3>Mover y transformar datos</h3>
+      <p>Construyo "tuberías" que recogen datos de muchos lugares, los limpian y los dejan listos para analizar, ya sea por lotes o en tiempo real.</p>
+      <div class="chipset"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">AWS S3</span><span class="chip">Glue</span><span class="chip">Athena</span><span class="chip">Kinesis</span><span class="chip">Redshift</span><span class="chip">EMR</span><span class="chip">DuckDB</span><span class="chip">dbt</span></div>
+    </article>
+    <article class="panel skill">
+      <span class="tag">PZ-B</span>
+      <p class="lbl">Desarrollo backend</p>
+      <h3>Construir el sistema</h3>
+      <p>Desarrollo la parte que no se ve de una aplicación: la lógica, la base de datos y la infraestructura para que funcione igual en cualquier computadora.</p>
+      <div class="chipset"><span class="chip">PHP / Laravel</span><span class="chip">Filament</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span><span class="chip">Docker</span><span class="chip">Next.js</span><span class="chip">Multi-tenancy</span></div>
+    </article>
+    <article class="panel skill">
+      <span class="tag">PZ-C</span>
+      <p class="lbl">Análisis funcional</p>
+      <h3>Entender el negocio</h3>
+      <p>Traduzco lo que la empresa necesita en algo que los programadores pueden construir, y verifico que lo construido resuelva el problema real.</p>
+      <div class="chipset"><span class="chip">Levantamiento de procesos</span><span class="chip">BPMN</span><span class="chip">Requerimientos</span><span class="chip">Análisis de brechas</span><span class="chip">Pruebas UAT</span><span class="chip">Diseño organizacional</span></div>
+    </article>
+    <article class="panel skill">
+      <span class="tag">PZ-D</span>
+      <p class="lbl">Dominio y documentación</p>
+      <h3>Conocer el terreno</h3>
+      <p>Conozco cómo funcionan las compras del Estado peruano y los ERP de construcción, y documento todo para que el siguiente equipo no empiece de cero.</p>
+      <div class="chipset"><span class="chip">SEACE</span><span class="chip">Ley 32069</span><span class="chip">ERP S10</span><span class="chip">Sector salud</span><span class="chip">MkDocs</span><span class="chip">Manuales de usuario</span><span class="chip">IA aplicada</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 03 PROYECTOS ============ -->
+<section class="sheet" id="proyectos">
+  <div class="sheet-head">
+    <div><p class="k">HOJA 03 / 05</p><h2>Proyectos</h2></div>
+    <div class="esc">4 LÁMINAS<br>DETALLE</div>
+  </div>
+  <div class="projects">
+
+    <!-- P-01 HIS -->
+    <article class="proj" id="p-his">
+      <div class="proj-head">
+        <div><span class="code">P-01 · SALUD</span><h3>ERP hospitalario</h3><p class="one">Un sistema de gestión para hospitales del sector salud peruano: MINSA, gobiernos regionales, EsSalud y clínicas privadas.</p></div>
+        <span class="stamp">ESCALA NACIONAL</span>
+      </div>
+      <div class="proj-body">
+        <div><p class="lbl">El problema</p><p>Cada hospital registra pacientes, citas, farmacia y referencias a su manera, muchas veces en sistemas que no se hablan entre sí.</p></div>
+        <div class="analogy">Imagina un edificio con muchos departamentos. Todos comparten la estructura, el ascensor y la seguridad, pero cada familia tiene su propia llave. Así funciona: una sola plataforma, y cada hospital con sus datos separados y protegidos.</div>
+        <div><p class="lbl">Mi aporte</p>
+          <ul>
+            <li>Preparé el entorno completo con Docker para que cualquier desarrollador lo levante en minutos.</li>
+            <li>Reconstruí y documenté la base de datos con programas propios en Python: 167 tablas por hospital y 375 relaciones entre ellas.</li>
+            <li>Armé un sitio de documentación de unas 214 páginas y manuales para más de 80 submódulos.</li>
+            <li>Escribí 102 pruebas automáticas que revisan que todo siga funcionando tras cada cambio.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="proj-fig">
+        <svg viewBox="0 0 320 230" role="img" aria-labelledby="f1t"><title id="f1t">Tres hospitales entran a una plataforma única y cada uno guarda sus datos en un espacio separado</title>
+          <g><rect class="s-box" x="6" y="18" width="84" height="34" rx="3"/><text class="s-t" x="48" y="39" text-anchor="middle">Hospital A</text></g>
+          <g><rect class="s-box" x="6" y="98" width="84" height="34" rx="3"/><text class="s-t" x="48" y="119" text-anchor="middle">Hospital B</text></g>
+          <g><rect class="s-box" x="6" y="178" width="84" height="34" rx="3"/><text class="s-t" x="48" y="199" text-anchor="middle">Hospital C</text></g>
+          <path class="s-flow" d="M90 35 C112 35 112 100 126 104"/>
+          <path class="s-flow" d="M90 115 L126 115"/>
+          <path class="s-flow" d="M90 195 C112 195 112 130 126 126"/>
+          <rect class="s-hl" x="126" y="84" width="76" height="62" rx="3"/>
+          <text class="s-tw" x="164" y="111" text-anchor="middle">Plataforma</text>
+          <text class="s-tw" x="164" y="126" text-anchor="middle">única</text>
+          <path class="s-flow" d="M202 104 C222 100 222 40 238 36"/>
+          <path class="s-flow" d="M202 115 L238 115"/>
+          <path class="s-flow" d="M202 126 C222 130 222 192 238 194"/>
+          <g id="cyl"><ellipse class="s-box2" cx="276" cy="24" rx="34" ry="7"/><path class="s-box2" d="M242 24 v24 a34 7 0 0 0 68 0 v-24"/><ellipse class="s-box2" cx="276" cy="24" rx="34" ry="7"/></g>
+          <text class="s-ts" x="276" y="44" text-anchor="middle">datos A</text>
+          <g transform="translate(0,80)"><ellipse class="s-box2" cx="276" cy="24" rx="34" ry="7"/><path class="s-box2" d="M242 24 v24 a34 7 0 0 0 68 0 v-24"/><ellipse class="s-box2" cx="276" cy="24" rx="34" ry="7"/></g>
+          <text class="s-ts" x="276" y="124" text-anchor="middle">datos B</text>
+          <g transform="translate(0,160)"><ellipse class="s-box2" cx="276" cy="24" rx="34" ry="7"/><path class="s-box2" d="M242 24 v24 a34 7 0 0 0 68 0 v-24"/><ellipse class="s-box2" cx="276" cy="24" rx="34" ry="7"/></g>
+          <text class="s-ts" x="276" y="204" text-anchor="middle">datos C</text>
+        </svg>
+        <p class="cap">FIG. 1 · Una plataforma, datos separados por hospital (multi-tenant)</p>
+      </div>
+      <div class="proj-foot">
+        <div class="chipset"><span class="chip">Laravel 11</span><span class="chip">Filament 3</span><span class="chip">PostgreSQL 16</span><span class="chip">Docker</span><span class="chip">Python</span><span class="chip">MkDocs</span></div>
+      </div>
+    </article>
+
+    <!-- P-02 TechQuk -->
+    <article class="proj" id="p-techquk">
+      <div class="proj-head">
+        <div><span class="code">P-02 · EMPRESA</span><h3>Sistema Integral TechQuk</h3><p class="one">Un ERP + CRM hecho a la medida de una empresa que vende tecnología y ejecuta proyectos para el Estado.</p></div>
+        <span class="stamp">ERP + CRM</span>
+      </div>
+      <div class="proj-body">
+        <div><p class="lbl">El problema</p><p>Licitaciones, compras, presupuestos y proyectos vivían en hojas de cálculo y correos sueltos. Saber cuánto costó realmente un proyecto tomaba días.</p></div>
+        <div><p class="lbl">Cómo funciona un proyecto en el sistema</p>
+          <ol>
+            <li>Aparece una licitación y se decide si conviene postular.</li>
+            <li>Se arma el presupuesto para ver si el proyecto es rentable.</li>
+            <li>Se preparan los documentos de postulación y de contrato.</li>
+            <li>Se tramita la carta fianza que exige la entidad.</li>
+            <li>Se ejecuta: cada compra queda ligada a su partida del presupuesto.</li>
+          </ol>
+        </div>
+        <div><p class="lbl">Mi aporte</p><p>Entrevisté a las áreas, mapeé sus procesos en BPMN, encontré las brechas y diseñé los módulos. La idea central: <strong>la IA sugiere y una persona revisa y aprueba</strong>, por ejemplo al ordenar presupuestos que llegan en formatos distintos.</p></div>
+      </div>
+      <div class="proj-fig">
+        <svg viewBox="0 0 320 230" role="img" aria-labelledby="f2t"><title id="f2t">El sistema integral en el centro, conectado a seis módulos, con la IA que sugiere y una persona que aprueba</title>
+          <path class="s-ln" d="M160 115 L60 40 M160 115 L260 40 M160 115 L36 115 M160 115 L284 115 M160 115 L60 190 M160 115 L260 190"/>
+          <g><rect class="s-box" x="18" y="24" width="84" height="30" rx="3"/><text class="s-t" x="60" y="43" text-anchor="middle">Licitaciones</text></g>
+          <g><rect class="s-box" x="218" y="24" width="84" height="30" rx="3"/><text class="s-t" x="260" y="43" text-anchor="middle">Compras</text></g>
+          <g><rect class="s-box" x="2" y="100" width="72" height="30" rx="3"/><text class="s-t" x="38" y="119" text-anchor="middle">Presupuesto</text></g>
+          <g><rect class="s-box" x="246" y="100" width="72" height="30" rx="3"/><text class="s-t" x="282" y="119" text-anchor="middle">Proyectos</text></g>
+          <g><rect class="s-box" x="18" y="176" width="84" height="30" rx="3"/><text class="s-t" x="60" y="195" text-anchor="middle">Tesorería</text></g>
+          <g><rect class="s-box" x="218" y="176" width="84" height="30" rx="3"/><text class="s-t" x="260" y="195" text-anchor="middle">RR. HH.</text></g>
+          <rect class="s-hl" x="114" y="94" width="92" height="42" rx="3"/>
+          <text class="s-tw" x="160" y="112" text-anchor="middle">Sistema</text>
+          <text class="s-tw" x="160" y="126" text-anchor="middle">integral</text>
+          <circle class="s-amb s-pulse" cx="160" cy="64" r="5"/>
+          <text class="s-ts" x="160" y="52" text-anchor="middle">IA sugiere</text>
+          <path class="s-ambln" d="M160 69 L160 94"/>
+          <circle class="s-amb" cx="160" cy="168" r="5"/>
+          <text class="s-ts" x="160" y="186" text-anchor="middle">persona aprueba</text>
+          <path class="s-ambln" d="M160 136 L160 163"/>
+        </svg>
+        <p class="cap">FIG. 2 · Un centro, seis módulos, y la IA siempre con revisión humana</p>
+      </div>
+      <div class="proj-foot">
+        <div class="chipset"><span class="chip">BPMN</span><span class="chip">Laravel</span><span class="chip">Filament</span><span class="chip">SQL Server</span><span class="chip">PostgreSQL</span><span class="chip">Claude</span></div>
+      </div>
+    </article>
+
+    <!-- P-03 SEACE -->
+    <article class="proj" id="p-seace">
+      <div class="proj-head">
+        <div><span class="code">P-03 · DATOS PÚBLICOS</span><h3>Radar de licitaciones SEACE</h3><p class="one">Una automatización que revisa cada día las compras públicas del Perú y avisa cuáles le convienen a la empresa.</p></div>
+        <span class="stamp">AUTOMÁTICO</span>
+      </div>
+      <div class="proj-body">
+        <div><p class="lbl">El problema</p><p>El Estado publica cientos de convocatorias en SEACE cada semana. Revisarlas a mano para encontrar las pocas que encajan con el rubro de la empresa es lento y se escapan oportunidades.</p></div>
+        <div><p class="lbl">Cómo funciona</p>
+          <ol>
+            <li>Cada día extrae las convocatorias nuevas publicadas en SEACE.</li>
+            <li>Limpia y ordena los datos: entidad, monto, plazo y rubro.</li>
+            <li>Filtra las que coinciden con lo que la empresa sabe hacer.</li>
+            <li>Las compara con el historial propio de postulaciones.</li>
+            <li>Muestra a gerencia un tablero que responde: ¿postulamos?</li>
+          </ol>
+        </div>
+        <div class="analogy">Es como tener a alguien que lee el periódico de licitaciones cada mañana y te deja sobre el escritorio solo las páginas que te interesan.</div>
+      </div>
+      <div class="proj-fig">
+        <svg viewBox="0 0 320 230" role="img" aria-labelledby="f3t"><title id="f3t">Flujo de datos de SEACE: extraer, limpiar, filtrar y mostrar en un tablero de decisión</title>
+          <rect class="s-box2" x="6" y="20" width="76" height="44" rx="3"/>
+          <text class="s-t" x="44" y="40" text-anchor="middle">SEACE</text>
+          <text class="s-ts" x="44" y="54" text-anchor="middle">fuente pública</text>
+          <path class="s-flow" d="M82 42 L116 42"/>
+          <rect class="s-box" x="116" y="24" width="80" height="36" rx="3"/>
+          <text class="s-t" x="156" y="46" text-anchor="middle">Extraer</text>
+          <path class="s-flow" d="M196 42 L230 42"/>
+          <rect class="s-box" x="230" y="24" width="80" height="36" rx="3"/>
+          <text class="s-t" x="270" y="46" text-anchor="middle">Limpiar</text>
+          <path class="s-flow" d="M270 60 C270 90 270 96 270 112"/>
+          <rect class="s-box" x="230" y="112" width="80" height="36" rx="3"/>
+          <text class="s-t" x="270" y="134" text-anchor="middle">Filtrar</text>
+          <path class="s-flow" d="M230 130 L180 130"/>
+          <rect class="s-hl" x="20" y="100" width="160" height="112" rx="3"/>
+          <text class="s-tw" x="34" y="122">¿Postulamos?</text>
+          <rect x="34" y="134" width="132" height="14" rx="2" fill="var(--card)" opacity=".18"/>
+          <rect x="34" y="134" width="40" height="14" rx="2" fill="var(--stamp)"/>
+          <text class="s-tw" x="80" y="145" style="font-size:9.5px">Sí · encaja</text>
+          <rect x="34" y="156" width="132" height="14" rx="2" fill="var(--card)" opacity=".18"/>
+          <rect x="34" y="156" width="26" height="14" rx="2" fill="var(--card)" opacity=".55"/>
+          <text class="s-tw" x="66" y="167" style="font-size:9.5px">Revisar</text>
+          <rect x="34" y="178" width="132" height="14" rx="2" fill="var(--card)" opacity=".18"/>
+          <rect x="34" y="178" width="14" height="14" rx="2" fill="var(--card)" opacity=".3"/>
+          <text class="s-tw" x="54" y="189" style="font-size:9.5px">No · otro rubro</text>
+          <circle class="s-amb s-pulse" cx="166" cy="117" r="4"/>
+        </svg>
+        <p class="cap">FIG. 3 · De la publicación pública a una decisión en un tablero</p>
+      </div>
+      <div class="proj-foot">
+        <div class="chipset"><span class="chip">Python</span><span class="chip">PostgreSQL</span><span class="chip">Laravel</span><span class="chip">SEACE</span><span class="chip">Ley 32069</span></div>
+      </div>
+    </article>
+
+    <!-- P-04 0AD -->
+    <article class="proj" id="p-0ad">
+      <div class="proj-head">
+        <div><span class="code">P-04 · INGENIERÍA DE DATOS</span><h3>0 A.D. GameRecords Lakehouse</h3><p class="one">Un almacén de datos que junta las partidas de los jugadores de 0 A.D. para medir quién juega mejor, no solo quién gana.</p></div>
+        <span class="stamp">CÓDIGO ABIERTO</span>
+      </div>
+      <div class="proj-body">
+        <div><p class="lbl">Contexto</p><p>0 A.D. es un juego de estrategia gratuito y libre, con una comunidad que juega en línea. Cada partida genera un archivo de repetición (replay), pero esos archivos se quedan dispersos en la computadora de cada jugador.</p></div>
+        <div><p class="lbl">Cómo funciona</p>
+          <ol>
+            <li>Reúne los replays de muchos jugadores en un solo lugar.</li>
+            <li>Los procesa por capas: datos crudos, datos limpios y datos listos para analizar.</li>
+            <li>Mide habilidades concretas: economía, control de unidades, estrategia y decisiones.</li>
+            <li>Genera reportes que ayudan a balancear el juego y a entrenar IAs más competitivas.</li>
+          </ol>
+        </div>
+        <div class="analogy">Un ranking normal es como juzgar a un futbolista solo por los goles. Aquí también se mide cómo pasa, cómo defiende y cómo lee el partido.</div>
+        <p>Todo corre en local, sin pagar servicios en la nube.</p>
+      </div>
+      <div class="proj-fig">
+        <svg viewBox="0 0 320 230" role="img" aria-labelledby="f4t"><title id="f4t">Los replays pasan por tres capas de datos, bronce, plata y oro, y terminan en ratings por habilidad</title>
+          <g>
+            <rect class="s-box2" x="8" y="20" width="26" height="32" rx="2"/><rect class="s-box2" x="14" y="26" width="26" height="32" rx="2"/><rect class="s-box" x="20" y="32" width="26" height="32" rx="2"/>
+            <text class="s-ts" x="30" y="80" text-anchor="middle">replays</text>
+          </g>
+          <path class="s-flow" d="M50 48 L74 48"/>
+          <g><rect class="s-box2" x="74" y="20" width="70" height="20" rx="2"/><text class="s-ts" x="109" y="34" text-anchor="middle">bronce · crudo</text></g>
+          <g><rect class="s-box" x="74" y="44" width="70" height="20" rx="2"/><text class="s-ts" x="109" y="58" text-anchor="middle">plata · limpio</text></g>
+          <g><rect class="s-hl" x="74" y="68" width="70" height="20" rx="2"/><text class="s-tw" x="109" y="82" text-anchor="middle" style="font-size:9.5px">oro · análisis</text></g>
+          <path class="s-flow" d="M144 78 C176 78 170 120 190 124"/>
+          <rect class="s-box" x="150" y="118" width="164" height="100" rx="3"/>
+          <text class="s-t" x="162" y="138">Rating por habilidad</text>
+          <text class="s-ts" x="162" y="158">economía</text><rect x="222" y="151" width="84" height="8" fill="var(--grid)"/><rect class="s-bar" x="222" y="151" width="72" height="8"/>
+          <text class="s-ts" x="162" y="176">micro</text><rect x="222" y="169" width="84" height="8" fill="var(--grid)"/><rect class="s-bar" x="222" y="169" width="54" height="8" style="animation-delay:-1s"/>
+          <text class="s-ts" x="162" y="194">estrategia</text><rect x="222" y="187" width="84" height="8" fill="var(--grid)"/><rect class="s-bar" x="222" y="187" width="80" height="8" style="animation-delay:-2s"/>
+          <text class="s-ts" x="162" y="212">decisiones</text><rect x="222" y="205" width="84" height="8" fill="var(--grid)"/><rect class="s-bar" x="222" y="205" width="62" height="8" style="animation-delay:-.5s"/>
+          <text class="s-ts" x="8" y="120">resultado ≠</text>
+          <text class="s-ts" x="8" y="134">habilidad</text>
+          <path class="s-ln" d="M8 142 L120 142" stroke-dasharray="2 3"/>
+        </svg>
+        <p class="cap">FIG. 4 · Arquitectura por capas (medallion) hacia un rating más justo</p>
+      </div>
+      <div class="proj-foot">
+        <div class="chipset"><span class="chip">Python</span><span class="chip">DuckDB</span><span class="chip">dbt</span><span class="chip">Parquet</span><span class="chip">Lakehouse</span></div>
+        <a href="https://github.com/SRamCoding/0ad-GameRecords-Lakehouse" target="_blank" rel="noopener">Ver código en GitHub ↗</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 04 TRAYECTORIA ============ -->
+<section class="sheet" id="trayectoria">
+  <div class="sheet-head">
+    <div><p class="k">HOJA 04 / 05</p><h2>Trayectoria</h2></div>
+    <div class="esc">LÍNEA DE<br>TIEMPO</div>
+  </div>
+  <div class="tl">
+    <article class="panel tl-item">
+      <p class="when">FORMACIÓN</p>
+      <h3>Bootcamp de ingeniería de datos</h3>
+      <p class="org">Henry · Academy Grow Data Skills</p>
+      <p>Construí dos pipelines completos: uno que procesa datos de publicidad digital en tiempo real (streaming) y otro que procesa datos por lotes en AWS.</p>
+    </article>
+    <article class="panel tl-item">
+      <p class="when">2026</p>
+      <h3>Colaborador · ERP hospitalario</h3>
+      <p class="org">Sector salud peruano</p>
+      <p>Infraestructura con Docker, documentación de la base de datos, sitio de documentación técnica, manuales de usuario y pruebas automáticas.</p>
+    </article>
+    <article class="panel tl-item now">
+      <p class="when">JUL 2026 — HOY</p>
+      <h3>Analista funcional</h3>
+      <p class="org">TechQuk S.A.C. · Chiclayo</p>
+      <p>Lidero el levantamiento de procesos y el diseño del sistema integral ERP + CRM: diagramas BPMN, registro de brechas, diseño organizacional y automatización de licitaciones.</p>
+    </article>
+    <article class="panel tl-item">
+      <p class="when">DIC 2026</p>
+      <h3>Ingeniería de Sistemas</h3>
+      <p class="org">Saint Leo University</p>
+      <p>Bases de datos, desarrollo web, y planificación y recuperación ante desastres.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 05 CONTACTO ============ -->
+<section class="sheet" id="contacto">
+  <div class="sheet-head">
+    <div><p class="k">HOJA 05 / 05</p><h2>Contacto</h2></div>
+    <div class="esc">PUNTO DE<br>CONEXIÓN</div>
+  </div>
+  <div class="contact">
+    <div class="panel call">
+      <p class="lbl">¿Tienes un proceso por ordenar o datos por mover?</p>
+      <h3>Conversemos y lo dibujamos juntos.</h3>
+      <p>Respondo en español o en inglés. Por WhatsApp respondo más rápido.</p>
+      <p style="margin-top:18px"><a class="btn" href="https://wa.me/51963120864" target="_blank" rel="noopener" style="font-size:14px;padding:10px 16px;display:inline-block">Escribir por WhatsApp ↗</a></p>
+    </div>
+    <div class="clist">
+      <div class="panel crow"><div><p class="lbl">WhatsApp · respuesta rápida</p><span class="val" id="v-tel">+51 963 120 864</span></div><div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><a class="btn" href="https://wa.me/51963120864" target="_blank" rel="noopener">Abrir ↗</a><button class="btn" type="button" data-copy="v-tel">Copiar</button></div></div>
+      <div class="panel crow"><div><p class="lbl">Correo</p><span class="val" id="v-mail">20rsebastian.trabajo@gmail.com</span></div><button class="btn" type="button" data-copy="v-mail">Copiar</button></div>
+      <div class="panel crow"><div><p class="lbl">GitHub</p><a class="val" href="https://github.com/SRamCoding" target="_blank" rel="noopener">github.com/SRamCoding</a></div><a class="btn" href="https://github.com/SRamCoding" target="_blank" rel="noopener">Abrir ↗</a></div>
+      <div class="panel crow"><div><p class="lbl">LinkedIn</p><a class="val" href="https://www.linkedin.com/in/sebasti%C3%A1n-ram%C3%ADrez-seb-b6b564282" target="_blank" rel="noopener">in/sebastián-ramírez-seb</a></div><a class="btn" href="https://www.linkedin.com/in/sebasti%C3%A1n-ram%C3%ADrez-seb-b6b564282" target="_blank" rel="noopener">Abrir ↗</a></div>
+    </div>
+  </div>
+
+  <div class="titleblock" aria-label="Cajetín del plano">
+    <div><span>PROYECTO</span><b>Portafolio de Sebastián A. Ramírez Roncal</b></div>
+    <div><span>DIBUJADO POR</span><b>S. Ramírez</b></div>
+    <div><span>FECHA</span><b>2026-11</b></div>
+    <div><span>HOJA</span><b>05 de 05</b></div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<div class="cross" id="cross" aria-hidden="true"><div class="h"></div><div class="v"></div><div class="xy"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  const out=document.getElementById('out'), term=document.getElementById('term'), input=document.getElementById('cmd');
+  const sections=['perfil','habilidades','proyectos','trayectoria','contacto'];
+  const hist=[]; let hi=0;
+  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  function line(html,cls){const p=document.createElement('p');if(cls)p.className=cls;p.innerHTML=html;out.appendChild(p);term.scrollTop=term.scrollHeight}
+  function go(id,msg){line(msg,'t-dim');setTimeout(()=>document.getElementById(id).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}),350)}
+  const cmds={
+    ayuda(){line('Comandos disponibles:','t-wh');
+      [['perfil','quién soy y cómo trabajo'],['habilidades','lo que sé hacer'],['proyectos','4 proyectos explicados'],['trayectoria','experiencia y estudios'],['contacto','cómo escribirme'],['whatsapp','escríbeme directo'],['github','mi código'],['stack','tecnologías en una línea'],['limpiar','borra la pantalla']]
+      .forEach(([c,d])=>line('  <span class="t-cy">'+c.padEnd(12,' ')+'</span><span class="t-dim">'+d+'</span>'));
+      line('Pista: hay un comando secreto que empieza con <span class="t-amb">sudo</span>.','t-dim')},
+    perfil(){go('perfil','→ abriendo HOJA 01 · Perfil…')},
+    habilidades(){go('habilidades','→ abriendo HOJA 02 · Habilidades…')},
+    proyectos(){line('P-01 ERP hospitalario   P-02 Sistema Integral TechQuk','t-cy');line('P-03 Radar SEACE        P-04 0 A.D. Lakehouse','t-cy');go('proyectos','→ abriendo HOJA 03 · Proyectos…')},
+    trayectoria(){go('trayectoria','→ abriendo HOJA 04 · Trayectoria…')},
+    contacto(){line('whatsapp <a href="https://wa.me/51963120864" target="_blank" rel="noopener">+51 963 120 864</a> <span class="t-dim">← lo más rápido</span>');line('correo   20rsebastian.trabajo@gmail.com');go('contacto','→ abriendo HOJA 05 · Contacto…')},
+    github(){line('<a href="https://github.com/SRamCoding" target="_blank" rel="noopener">https://github.com/SRamCoding</a> <span class="t-dim">← toca para abrir</span>')},
+    linkedin(){line('<a href="https://www.linkedin.com/in/sebasti%C3%A1n-ram%C3%ADrez-seb-b6b564282" target="_blank" rel="noopener">linkedin.com/in/sebastián-ramírez-seb</a>')},
+    whatsapp(){line('<a href="https://wa.me/51963120864" target="_blank" rel="noopener">https://wa.me/51963120864</a> <span class="t-dim">← toca para escribirme</span>')},
+    stack(){line('python · sql · aws · duckdb · dbt · laravel · filament · postgresql · sql server · docker · bpmn','t-cy')},
+    whoami(){line('Sebastián Alonso Ramírez Roncal — analista funcional y data engineer')},
+    limpiar(){out.innerHTML=''},
+    clear(){out.innerHTML=''},
+    help(){cmds.ayuda()},
+    ls(){line(sections.join('  '),'t-cy')},
+    'sudo contratar'(){line('[sudo] verificando permisos…','t-dim');setTimeout(()=>{line('✔ Permiso concedido. Excelente decisión.','t-amb');go('contacto','→ te llevo al contacto…')},600)},
+    sudo(){line('Uso: sudo contratar','t-dim')}
+  };
+  function run(raw){
+    const c=raw.trim().toLowerCase().replace(/\s+/g,' ');
+    line('<span class="t-amb">seb@portafolio:~$</span> <span class="t-wh">'+esc(raw)+'</span>');
+    if(!c)return;
+    hist.push(raw);hi=hist.length;
+    const key=c.startsWith('cd ')?c.slice(3):c;
+    if(cmds[key])cmds[key]();
+    else line('comando no encontrado: '+esc(c)+'. Escribe <span class="t-cy">ayuda</span>.','t-dim');
+  }
+  document.getElementById('pf').addEventListener('submit',e=>{e.preventDefault();run(input.value);input.value=''});
+  input.addEventListener('keydown',e=>{
+    if(e.key==='ArrowUp'&&hist.length){e.preventDefault();hi=Math.max(0,hi-1);input.value=hist[hi]}
+    else if(e.key==='ArrowDown'&&hist.length){e.preventDefault();hi=Math.min(hist.length,hi+1);input.value=hist[hi]||''}
+    else if(e.key==='Tab'){const v=input.value.trim().toLowerCase();if(!v)return;const m=Object.keys(cmds).filter(k=>k.startsWith(v)&&!k.includes(' '));if(m.length){e.preventDefault();input.value=m[0]}}
+  });
+  term.addEventListener('click',e=>{if(e.target.tagName!=='A'&&!window.getSelection().toString())input.focus({preventScroll:true})});
+  document.querySelectorAll('[data-cmd]').forEach(b=>b.addEventListener('click',()=>run(b.dataset.cmd)));
+
+  /* Hoja activa */
+  const links=[...document.querySelectorAll('.rail a,.strip a')], rail=document.getElementById('rail');
+  const ids=['inicio',...sections];
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){const id=en.target.id;links.forEach(a=>a.classList.toggle('on',a.dataset.s===id));rail.classList.toggle('dark',id==='inicio');
+    const s=document.querySelector('.strip a.on');if(s&&s.parentElement.scrollTo)s.parentElement.scrollTo({left:s.offsetLeft-16,behavior:'smooth'})}})},{rootMargin:'-45% 0px -50% 0px'});
+  ids.forEach(id=>io.observe(document.getElementById(id)));
+
+  /* Retícula con coordenadas en mm sobre las láminas */
+  const main=document.getElementById('main'), cross=document.getElementById('cross'), h=cross.querySelector('.h'), v=cross.querySelector('.v'), xy=cross.querySelector('.xy');
+  if(matchMedia('(pointer:fine)').matches){
+    main.addEventListener('mousemove',e=>{cross.style.opacity=1;h.style.top=e.clientY+'px';v.style.left=e.clientX+'px';
+      const r=main.getBoundingClientRect();xy.textContent='x '+((e.clientX-r.left)*0.2646).toFixed(1)+' · y '+((e.clientY-r.top)*0.2646).toFixed(1)+' mm';
+      xy.style.left=Math.min(e.clientX+12,innerWidth-170)+'px';xy.style.top=(e.clientY+12)+'px'});
+    main.addEventListener('mouseleave',()=>cross.style.opacity=0);
+  }
+
+  /* Copiar */
+  const toast=document.getElementById('toast');let tt;
+  function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),1800)}
+  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+    const el=document.getElementById(b.dataset.copy), txt=el.textContent.trim();
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);say('Seleccionado. Cópialo con Ctrl+C')};
+    try{navigator.clipboard.writeText(txt).then(()=>say('Copiado: '+txt),sel)}catch(e){sel()}
+  }));
+})();
+</script>
+</body></html>
