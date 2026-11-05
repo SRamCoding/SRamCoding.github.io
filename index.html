@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Portafolio de Sebastián Ramírez: analista funcional e ingeniero de datos en Chiclayo, Perú.">
+<meta name="description" content="Portafolio de Sebastián Ramírez: analista funcional, ingeniero de datos y agentes de IA en Chiclayo, Perú.">
 <meta property="og:title" content="Sebastián Ramírez · Portafolio">
-<meta property="og:description" content="Analista funcional e ingeniero de datos. Del proceso al dato.">
+<meta property="og:description" content="Analista funcional, ingeniero de datos y agentes de IA. Del proceso al dato.">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Sebastián Ramírez</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,6 +135,10 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
 .skill h3{font-family:var(--f-display);font-size:22px;margin:0;font-weight:700}
 .skill p{margin:0;color:var(--ink-2);font-size:15px}
 .skill .tag{position:absolute;top:14px;right:16px;font-family:var(--f-mono);font-size:11px;color:var(--ink-2)}
+.skill.ai{grid-column:1/-1;border:2px solid var(--stamp);background:linear-gradient(var(--card),var(--card)) padding-box}
+.skill.ai .lbl{color:var(--stamp)}
+.skill.ai h3{font-size:clamp(1.4rem,3vw,1.9rem)}
+.skill.ai p{max-width:80ch}
 
 /* Proyectos */
 .projects{display:flex;flex-direction:column;gap:40px}
@@ -247,7 +251,7 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
     <div>
       <p class="eyebrow"><b>●</b> CHICLAYO, PERÚ · −5 UTC</p>
       <h1>Sebastián <span>Ramírez</span></h1>
-      <p class="role"># analista funcional + ingeniero de datos</p>
+      <p class="role"># analista funcional · ingeniero de datos · agentes de IA</p>
       <p class="lead">Entiendo cómo trabaja una empresa, lo dibujo para que todos lo entiendan y lo convierto en sistemas y datos que ayudan a decidir mejor.</p>
       <div class="flowline" aria-label="Proceso, luego sistema, luego dato">
         <span class="node">proceso</span><span class="track"></span><span class="node">sistema</span><span class="track"></span><span class="node">dato</span>
@@ -276,6 +280,7 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
         <button type="button" data-cmd="perfil">perfil</button>
         <button type="button" data-cmd="habilidades">habilidades</button>
         <button type="button" data-cmd="proyectos">proyectos</button>
+        <button type="button" data-cmd="ia">ia</button>
         <button type="button" data-cmd="trayectoria">trayectoria</button>
         <button type="button" data-cmd="contacto">contacto</button>
         <button type="button" data-cmd="github">github</button>
@@ -317,6 +322,7 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
       <p>Trabajo justo donde se encuentran el negocio y la tecnología.</p>
       <p>Primero escucho: cómo se compra un material, cómo se postula a una licitación del Estado, cómo se atiende a un paciente. Después lo dibujo en diagramas sencillos que cualquiera en la empresa puede leer y corregir.</p>
       <p>Y al final lo construyo: el sistema donde vive esa información y los flujos de datos que la limpian, la ordenan y la convierten en reportes para decidir.</p>
+      <p>En todo ese camino trabajo profesionalmente con agentes de IA: los uso para analizar sistemas, documentar, programar y revisar código, siempre con un método claro y con una persona validando cada resultado.</p>
       <p>Hoy soy analista funcional en TechQuk, una empresa de Chiclayo que lleva tecnología a entidades públicas, y estudio Ingeniería de Sistemas en Saint Leo University.</p>
     </div>
     <div class="side">
@@ -325,7 +331,7 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
         <dl class="facts">
           <div><dt>Base</dt><dd>Chiclayo, Perú</dd></div>
           <div><dt>Rol actual</dt><dd>Analista funcional</dd></div>
-          <div><dt>Enfoque</dt><dd>Datos + sistemas</dd></div>
+          <div><dt>Enfoque</dt><dd>Datos, sistemas e IA</dd></div>
           <div><dt>Sectores</dt><dd>Público, salud</dd></div>
         </dl>
       </div>
@@ -355,7 +361,7 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
 <section class="sheet" id="habilidades">
   <div class="sheet-head">
     <div><p class="k">HOJA 02 / 05</p><h2>Habilidades</h2></div>
-    <div class="esc">4 PIEZAS<br>ENSAMBLADAS</div>
+    <div class="esc">5 PIEZAS<br>ENSAMBLADAS</div>
   </div>
   <div class="skills">
     <article class="panel skill">
@@ -384,7 +390,14 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
       <p class="lbl">Dominio y documentación</p>
       <h3>Conocer el terreno</h3>
       <p>Conozco cómo funcionan las compras del Estado peruano y los ERP de construcción, y documento todo para que el siguiente equipo no empiece de cero.</p>
-      <div class="chipset"><span class="chip">SEACE</span><span class="chip">Ley 32069</span><span class="chip">ERP S10</span><span class="chip">Sector salud</span><span class="chip">MkDocs</span><span class="chip">Manuales de usuario</span><span class="chip">IA aplicada</span></div>
+      <div class="chipset"><span class="chip">SEACE</span><span class="chip">Ley 32069</span><span class="chip">ERP S10</span><span class="chip">Sector salud</span><span class="chip">MkDocs</span><span class="chip">Manuales de usuario</span></div>
+    </article>
+    <article class="panel skill ai">
+      <span class="tag">PZ-E · TRANSVERSAL</span>
+      <p class="lbl">Agentes de IA</p>
+      <h3>Trabajo con agentes de IA a nivel profesional</h3>
+      <p>Uso agentes de IA en todo el ciclo de un proyecto: levantar y ordenar requerimientos, analizar bases de datos enormes, generar documentación, programar y revisar código. También diseño sistemas donde la IA sugiere y una persona aprueba, para que la automatización sea útil y confiable.</p>
+      <div class="chipset"><span class="chip">Claude</span><span class="chip">Claude Code</span><span class="chip">Agentes autónomos</span><span class="chip">Spec-Driven Development</span><span class="chip">Prompt engineering</span><span class="chip">IA con revisión humana</span><span class="chip">Modelos locales</span></div>
     </article>
   </div>
 </section>
@@ -393,7 +406,7 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
 <section class="sheet" id="proyectos">
   <div class="sheet-head">
     <div><p class="k">HOJA 03 / 05</p><h2>Proyectos</h2></div>
-    <div class="esc">4 LÁMINAS<br>DETALLE</div>
+    <div class="esc">5 LÁMINAS<br>DETALLE</div>
   </div>
   <div class="projects">
 
@@ -408,6 +421,7 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
         <div class="analogy">Imagina un edificio con muchos departamentos. Todos comparten la estructura, el ascensor y la seguridad, pero cada familia tiene su propia llave. Así funciona: una sola plataforma, y cada hospital con sus datos separados y protegidos.</div>
         <div><p class="lbl">Mi aporte</p>
           <ul>
+            <li>Colaboré en el desarrollo de módulos del sistema.</li>
             <li>Preparé el entorno completo con Docker para que cualquier desarrollador lo levante en minutos.</li>
             <li>Reconstruí y documenté la base de datos con programas propios en Python: 167 tablas por hospital y 375 relaciones entre ellas.</li>
             <li>Armé un sitio de documentación de unas 214 páginas y manuales para más de 80 submódulos.</li>
@@ -460,7 +474,7 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
             <li>Se ejecuta: cada compra queda ligada a su partida del presupuesto.</li>
           </ol>
         </div>
-        <div><p class="lbl">Mi aporte</p><p>Entrevisté a las áreas, mapeé sus procesos en BPMN, encontré las brechas y diseñé los módulos. La idea central: <strong>la IA sugiere y una persona revisa y aprueba</strong>, por ejemplo al ordenar presupuestos que llegan en formatos distintos.</p></div>
+        <div><p class="lbl">Mi aporte</p><p>Me encargué del proyecto de punta a punta: entrevisté a las áreas, mapeé sus procesos en BPMN, encontré las brechas, diseñé los módulos y desarrollé el sistema completo. La idea central: <strong>la IA sugiere y una persona revisa y aprueba</strong>, por ejemplo al ordenar presupuestos que llegan en formatos distintos.</p></div>
       </div>
       <div class="proj-fig">
         <svg viewBox="0 0 320 230" role="img" aria-labelledby="f2t"><title id="f2t">El sistema integral en el centro, conectado a seis módulos, con la IA que sugiere y una persona que aprueba</title>
@@ -590,6 +604,53 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
       </div>
     </article>
 
+    <!-- P-05 Migraciones -->
+    <article class="proj" id="p-migra">
+      <div class="proj-head">
+        <div><span class="code">P-05 · DATA SCIENCE</span><h3>Predicción de migraciones</h3><p class="one">Un sistema que estima cuántas personas migrarán entre Perú, Argentina y Venezuela, con un tablero para explorar los datos.</p></div>
+        <span class="stamp">MODELO + TABLERO</span>
+      </div>
+      <div class="proj-body">
+        <div><p class="lbl">El problema</p><p>Cuando miles de personas cambian de país, los gobiernos y las organizaciones necesitan anticiparse: cuántos colegios, puestos de salud o programas de apoyo harán falta. Sin una estimación, se reacciona tarde.</p></div>
+        <div><p class="lbl">Cómo funciona</p>
+          <ol>
+            <li>Reúne datos históricos de migración de los tres países, junto con indicadores como economía y población.</li>
+            <li>Limpia y unifica esas fuentes, que vienen en formatos distintos.</li>
+            <li>Entrena un modelo que aprende cómo se relacionan esos indicadores con la migración.</li>
+            <li>Proyecta los flujos de los próximos años.</li>
+            <li>Muestra todo en un tablero donde puedes filtrar por país y por año.</li>
+          </ol>
+        </div>
+        <div class="analogy">Funciona como el pronóstico del clima: mira lo que pasó antes y las condiciones de hoy para estimar lo que probablemente vendrá.</div>
+      </div>
+      <div class="proj-fig">
+        <svg viewBox="0 0 320 230" role="img" aria-labelledby="f5t"><title id="f5t">Datos de Perú, Argentina y Venezuela entran a un modelo que alimenta un tablero con la tendencia histórica y la proyección</title>
+          <g><rect class="s-box" x="6" y="14" width="78" height="28" rx="3"/><text class="s-t" x="45" y="32" text-anchor="middle">Venezuela</text></g>
+          <g><rect class="s-box" x="6" y="50" width="78" height="28" rx="3"/><text class="s-t" x="45" y="68" text-anchor="middle">Perú</text></g>
+          <g><rect class="s-box" x="6" y="86" width="78" height="28" rx="3"/><text class="s-t" x="45" y="104" text-anchor="middle">Argentina</text></g>
+          <path class="s-flow" d="M84 28 C106 28 106 56 122 60"/>
+          <path class="s-flow" d="M84 64 L122 64"/>
+          <path class="s-flow" d="M84 100 C106 100 106 72 122 68"/>
+          <rect class="s-hl" x="122" y="44" width="70" height="40" rx="3"/>
+          <text class="s-tw" x="157" y="68" text-anchor="middle">Modelo</text>
+          <path class="s-flow" d="M192 64 C230 64 236 92 236 120"/>
+          <rect class="s-box" x="6" y="122" width="308" height="102" rx="3"/>
+          <text class="s-t" x="18" y="140">Tablero · flujo migratorio</text>
+          <text class="s-ts" x="230" y="140">país ▾  año ▾</text>
+          <path class="s-ln" d="M18 210 L302 210" stroke-opacity=".5"/>
+          <path class="s-ln" d="M18 200 L60 192 L102 196 L144 178 L186 170" stroke-width="2"/>
+          <path class="s-ambln" d="M186 170 L228 158 L270 150 L302 140" stroke-width="2"/>
+          <circle class="s-amb s-pulse" cx="186" cy="170" r="4"/>
+          <text class="s-ts" x="60" y="222">histórico</text>
+          <text class="s-ts" x="232" y="222">proyección</text>
+        </svg>
+        <p class="cap">FIG. 5 · De datos de tres países a una proyección que cualquiera puede explorar</p>
+      </div>
+      <div class="proj-foot">
+        <div class="chipset"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">Machine learning</span><span class="chip">Dashboard</span></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -601,28 +662,46 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
   </div>
   <div class="tl">
     <article class="panel tl-item">
-      <p class="when">FORMACIÓN</p>
-      <h3>Bootcamp de ingeniería de datos</h3>
-      <p class="org">Henry · Academy Grow Data Skills</p>
-      <p>Construí dos pipelines completos: uno que procesa datos de publicidad digital en tiempo real (streaming) y otro que procesa datos por lotes en AWS.</p>
+      <p class="when">2020</p>
+      <h3>Inicio de la carrera universitaria</h3>
+      <p class="org">Universidad Nacional Pedro Ruiz Gallo · Lambayeque</p>
+      <p>Primeros pasos en programación, matemáticas y bases de datos.</p>
+    </article>
+    <article class="panel tl-item">
+      <p class="when">2022 — 2023</p>
+      <h3>Bootcamp de Data Science</h3>
+      <p class="org">Henry</p>
+      <p>Análisis de datos, modelos predictivos y pipelines: construí flujos que procesan datos de publicidad digital en tiempo real y datos por lotes en AWS, además del sistema de predicción de migraciones.</p>
+    </article>
+    <article class="panel tl-item">
+      <p class="when">MAY 2023</p>
+      <h3>Traslado a Ingeniería de Sistemas</h3>
+      <p class="org">Saint Leo University</p>
+      <p>Continué la carrera en Saint Leo: bases de datos, desarrollo web, y planificación y recuperación ante desastres.</p>
+    </article>
+    <article class="panel tl-item">
+      <p class="when">2024</p>
+      <h3>Agente de atención al cliente</h3>
+      <p class="org">Servicio al cliente</p>
+      <p>Aprendí a escuchar al usuario, entender su problema rápido y explicar soluciones con claridad. Hoy lo aplico en cada levantamiento de procesos.</p>
     </article>
     <article class="panel tl-item">
       <p class="when">2026</p>
       <h3>Colaborador · ERP hospitalario</h3>
       <p class="org">Sector salud peruano</p>
-      <p>Infraestructura con Docker, documentación de la base de datos, sitio de documentación técnica, manuales de usuario y pruebas automáticas.</p>
+      <p>Desarrollo de módulos, infraestructura con Docker, documentación de la base de datos, manuales de usuario y pruebas automáticas.</p>
     </article>
     <article class="panel tl-item now">
       <p class="when">JUL 2026 — HOY</p>
       <h3>Analista funcional</h3>
       <p class="org">TechQuk S.A.C. · Chiclayo</p>
-      <p>Lidero el levantamiento de procesos y el diseño del sistema integral ERP + CRM: diagramas BPMN, registro de brechas, diseño organizacional y automatización de licitaciones.</p>
+      <p>Lidero de punta a punta el sistema integral ERP + CRM: levantamiento de procesos, diagramas BPMN, registro de brechas, diseño organizacional, desarrollo y automatización de licitaciones.</p>
     </article>
     <article class="panel tl-item">
       <p class="when">DIC 2026</p>
-      <h3>Ingeniería de Sistemas</h3>
+      <h3>Egreso · Ingeniería de Sistemas</h3>
       <p class="org">Saint Leo University</p>
-      <p>Bases de datos, desarrollo web, y planificación y recuperación ante desastres.</p>
+      <p>Cierre de la carrera.</p>
     </article>
   </div>
 </section>
@@ -648,13 +727,8 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
     </div>
   </div>
 
-  <div class="titleblock" aria-label="Cajetín del plano">
-    <div><span>PROYECTO</span><b>Portafolio de Sebastián A. Ramírez Roncal</b></div>
-    <div><span>DIBUJADO POR</span><b>S. Ramírez</b></div>
-    <div><span>FECHA</span><b>2026-11</b></div>
-    <div><span>HOJA</span><b>05 de 05</b></div>
-  </div>
 </section>
+<div style="height:48px"></div>
 
 </div>
 </main>
@@ -672,18 +746,19 @@ main{background-color:var(--paper);background-image:linear-gradient(var(--grid) 
   function go(id,msg){line(msg,'t-dim');setTimeout(()=>document.getElementById(id).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}),350)}
   const cmds={
     ayuda(){line('Comandos disponibles:','t-wh');
-      [['perfil','quién soy y cómo trabajo'],['habilidades','lo que sé hacer'],['proyectos','4 proyectos explicados'],['trayectoria','experiencia y estudios'],['contacto','cómo escribirme'],['whatsapp','escríbeme directo'],['github','mi código'],['stack','tecnologías en una línea'],['limpiar','borra la pantalla']]
+      [['perfil','quién soy y cómo trabajo'],['habilidades','lo que sé hacer'],['proyectos','5 proyectos explicados'],['ia','cómo trabajo con agentes de IA'],['trayectoria','experiencia y estudios'],['contacto','cómo escribirme'],['whatsapp','escríbeme directo'],['github','mi código'],['stack','tecnologías en una línea'],['limpiar','borra la pantalla']]
       .forEach(([c,d])=>line('  <span class="t-cy">'+c.padEnd(12,' ')+'</span><span class="t-dim">'+d+'</span>'));
       line('Pista: hay un comando secreto que empieza con <span class="t-amb">sudo</span>.','t-dim')},
     perfil(){go('perfil','→ abriendo HOJA 01 · Perfil…')},
     habilidades(){go('habilidades','→ abriendo HOJA 02 · Habilidades…')},
-    proyectos(){line('P-01 ERP hospitalario   P-02 Sistema Integral TechQuk','t-cy');line('P-03 Radar SEACE        P-04 0 A.D. Lakehouse','t-cy');go('proyectos','→ abriendo HOJA 03 · Proyectos…')},
+    proyectos(){line('P-01 ERP hospitalario   P-02 Sistema Integral TechQuk','t-cy');line('P-03 Radar SEACE        P-04 0 A.D. Lakehouse','t-cy');line('P-05 Predicción de migraciones','t-cy');go('proyectos','→ abriendo HOJA 03 · Proyectos…')},
     trayectoria(){go('trayectoria','→ abriendo HOJA 04 · Trayectoria…')},
     contacto(){line('whatsapp <a href="https://wa.me/51963120864" target="_blank" rel="noopener">+51 963 120 864</a> <span class="t-dim">← lo más rápido</span>');line('correo   20rsebastian.trabajo@gmail.com');go('contacto','→ abriendo HOJA 05 · Contacto…')},
     github(){line('<a href="https://github.com/SRamCoding" target="_blank" rel="noopener">https://github.com/SRamCoding</a> <span class="t-dim">← toca para abrir</span>')},
     linkedin(){line('<a href="https://www.linkedin.com/in/sebasti%C3%A1n-ram%C3%ADrez-seb-b6b564282" target="_blank" rel="noopener">linkedin.com/in/sebastián-ramírez-seb</a>')},
     whatsapp(){line('<a href="https://wa.me/51963120864" target="_blank" rel="noopener">https://wa.me/51963120864</a> <span class="t-dim">← toca para escribirme</span>')},
-    stack(){line('python · sql · aws · duckdb · dbt · laravel · filament · postgresql · sql server · docker · bpmn','t-cy')},
+    stack(){line('python · sql · aws · duckdb · dbt · scikit-learn · laravel · filament · postgresql · sql server · docker · bpmn · claude','t-cy')},
+    ia(){line('Trabajo con agentes de IA a diario y a nivel profesional:','t-wh');line('  analizar · documentar · programar · revisar código','t-cy');line('  regla de oro: la IA sugiere, una persona aprueba','t-dim');go('habilidades','→ abriendo HOJA 02 · Habilidades…')},
     whoami(){line('Sebastián Alonso Ramírez Roncal — analista funcional y data engineer')},
     limpiar(){out.innerHTML=''},
     clear(){out.innerHTML=''},
